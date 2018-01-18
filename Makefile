@@ -3,3 +3,4 @@ all:
 	clang -g -w -c -o mp32pcm.o mp32pcm.c
 	clang -g -o example example.c perform.o mp32pcm.o -lm
 	gtts-cli o -l en -o o.mp3
+	sox -n -r 24000 -c 1 s.mp3 trim 0.0 1.0
