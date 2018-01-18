@@ -502,8 +502,8 @@ decode_header (mp3_info * info, unsigned char *frame)
     if (info->mode != MP3_JOINT_STEREO)
       info->bound = 32;
     if (info->mode == MP3_JOINT_STEREO) {                            /* 281 */
-      info->ms_stereo = (bits >> 1) & 1;
-      info->i_stereo = bits & 1;
+      info->i_stereo = (bits >> 1) & 1;
+      info->ms_stereo = bits & 1;
     }
     else
       info->ms_stereo = info->i_stereo = 0;
