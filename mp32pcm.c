@@ -543,7 +543,7 @@ decode_header (mp3_info * info, unsigned char *frame)
   }
   if (info->layer == 3 && info->version != MP3_V1_0)                 /* 375 */
     info->frame_size =
-      1 * (info->padding + 72 * info->bit_rate / info->sample_rate);
+      1 * (info->padding + ((1152 / 8) / 2) * info->bit_rate / info->sample_rate);
   if (info->frame_size > MAX_FRAME)
     return 0;
   return 1;
