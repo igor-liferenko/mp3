@@ -1,6 +1,8 @@
 #include <unistd.h>
        #include <sys/stat.h>
        #include <sys/types.h>
+
+/* BUFSIZ is somewhere here: */
 #include <stdint.h>
 #include <stdio.h>
 #include <sys/types.h>
@@ -14,6 +16,8 @@
 #include <stdbool.h>
 
 #include <fcntl.h>
+#define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
+
 int main(int argc, char **argv)
 {
         struct stat st;
@@ -26,7 +30,7 @@ int main(int argc, char **argv)
 
 int                fd_out = open("out.dat", O_CREAT | O_WRONLY, st.st_mode);
 
-        size_t remaining = st.st_size;
+        size_t remaining = (size_t) st.st_size; /* see em.w */
 
         while (remaining > 0) {
                 size_t requested = MIN(sizeof(buf), remaining);
