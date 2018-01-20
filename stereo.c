@@ -19,6 +19,12 @@ int main(int argc, char **argv)
       perror("write failed\n");
       return 1;
     }
+    buf = 0;
+    fwrite(&buf, sizeof (signed short), 1, fp_out);
+    if (ferror(fp_out)) {
+      perror("write failed\n");
+      return 1;
+    }
   }
   if (ferror(fp_in)) {
     perror("read failed\n");
