@@ -1,14 +1,13 @@
 #include <stdio.h>
 
-int main(int argc, char **argv)
+int main(void)
 {
-  (void) argc;
   FILE *fp_in, *fp_out;
-  if ((fp_in = fopen(argv[1],"r")) == NULL) {
+  if ((fp_in = fopen("o.pcm", "r")) == NULL) {
     perror("open failed on input");
     return 1;
   }
-  if ((fp_out = fopen("stereo.pcm","w")) == NULL) {
+  if ((fp_out = fopen("stereo.pcm", "w")) == NULL) {
     perror("open failed on output");
     return 1;
   }
