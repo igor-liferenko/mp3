@@ -17,3 +17,11 @@ all:
 	echo the following two must be equal:
 	md5sum o.wav mono.wav
 	sox stereo.wav -r 44100 ready.wav
+	rm o.raw
+	dd if=o.wav of=o.raw bs=1 skip=44
+	echo the following two must be equal:
+	md5sum o.raw o.pcm
+	rm stereo.raw
+	dd if=stereo.wav of=stereo.raw bs=1 skip=44
+	echo the following two must be equal:
+	md5sum stereo.raw stereo.pcm
