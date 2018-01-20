@@ -1,21 +1,9 @@
 #include <unistd.h>
-       #include <sys/stat.h>
-       #include <sys/types.h>
-
-/* BUFSIZ is somewhere here: */
-#include <stdint.h>
-#include <stdio.h>
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/types.h>
+#include <stdio.h> /* |BUFSIZ| */
 #include <fcntl.h>
-#include <errno.h>
-#include <unistd.h>
-#include <string.h>
-#include <stdlib.h>
-#include <getopt.h>
-#include <stdbool.h>
 
-#include <fcntl.h>
 #define MIN(X,Y) ((X) < (Y) ? (X) : (Y))
 
 int main(int argc, char **argv)
