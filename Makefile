@@ -11,8 +11,9 @@ all:
 	cp o.pcm o.raw
 	sox -r 24000 -e signed -b 16 -c 1 o.raw stereo-sox.wav remix 1 0
 	echo all two must be equal:
-	md5sum stereo.pcm.wav stereo.wav stereo-sox.wav
+	md5sum stereo.wav stereo-sox.wav
 	sox stereo-sox.wav mono.wav remix 1
 	sox -r 24000 -e signed -b 16 -c 1 o.raw o.wav
 	echo the following two must be equal:
-	md5sum o.wav mono.wav o.pcm.wav
+	md5sum o.wav mono.wav
+	sox stereo.wav -r 44100 ready.wav
