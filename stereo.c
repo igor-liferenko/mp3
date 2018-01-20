@@ -13,9 +13,9 @@ int main(int argc, char **argv)
   int fd_in = open(argv[1], O_RDONLY);
   fstat(fd_in, &st);
   int fd_out = open("out.dat", O_CREAT | O_WRONLY, st.st_mode);
-  off_t remaining = st.st_size;
+  size_t remaining = (size_t) st.st_size;
   while (remaining > 0) {
-    size_t requested = MIN(sizeof(buf), remaining);
+    size_t requested = MIN(sizeof buf, remaining);
     ssize_t rcount = read(fd_in, buf, requested);
     if (rcount < 0) return 1;
     for (int i = 0; i < rcount; i++) {
