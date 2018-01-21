@@ -25,3 +25,7 @@ all:
 	dd if=stereo.wav of=stereo.raw bs=1 skip=44
 	echo the following two must be equal:
 	md5sum stereo.raw stereo.pcm
+	dd if=/usr/share/sounds/alsa/Front_Right.wav of=Front_Right.raw bs=1 skip=44
+	sox -r 48000 -e signed -b 16 -c 1 Front_Right.raw Front_Right.wav
+	echo the following two must be equal:
+	md5sum Front_Right.wav /usr/share/sounds/alsa/Front_Right.wav
