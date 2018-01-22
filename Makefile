@@ -4,6 +4,7 @@ all:
 	clang -g -o example example.c perform.o mp32pcm.o -lm
 	gtts-cli "hello world" -l en -o o.mp3
 	./example
+	ctangle stereo
 	clang -o stereo stereo.c
 	./stereo
 	cp stereo.pcm stereo.raw
