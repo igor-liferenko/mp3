@@ -1,26 +1,7 @@
-/*
-    Copyright 2005 Martin Ruckert
-    
-    ruckertm@acm.org
+@ TODO: read from file (from \.{curl} which writes internet radio to pipe) and write to file
+(sound card device - see {\sl pcm\/})
 
-    This file is part of mp32pcm.
-
-    mp32pcm is free software; you can redistribute it and/or modify
-    it under the terms of the GNU Lesser General Public License as published by
-    the Free Software Foundation; either version 2.1 of the License, or
-    (at your option) any later version.
-
-    mp32pcm is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Lesser General Public License for more details.
-
-    You should have received a copy of the GNU Lesser General Public License
-    along with mp32pcm; if not, write to the Free Software
-    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-
-*/
-
+@c
 #include <unistd.h>                                                  /*  17 */
 #include <fcntl.h>
 #include "mp32pcm.h"
