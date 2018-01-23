@@ -1,4 +1,6 @@
-@ @c
+@ Usig file streams enstead of raw files is better because they do buffering for us.
+
+@c
 #include <stdio.h>
 
 int main(void)
