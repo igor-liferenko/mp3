@@ -1,0 +1,2 @@
+read from file (from \.{curl} which writes internet radio to pipe) and write to file
+(sound card device - see {\sl pcm\/})
