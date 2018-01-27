@@ -1,3 +1,20 @@
 http://id3.org/mp3Frame
 https://www.mp3-tech.org/programmer/frame_header.html
 http://www.mp3-tech.org/programmer/docs/mp3_theory.pdf
+
+To use gdb on example.c:
+
++#include <fcntl.h> /* S_IWUSR S_IRUSR O_CREAT O_WRONLY O_RDONLY */
+...
+   id = mp3_open (read, NULL);
+   if (id < 0)
+     return 1;
++  int my = open("o.mp3", O_RDONLY);
++  dup2(my, STDIN_FILENO);
++  close(my);
++  my = open("o.pcm", O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
++  dup2(my, STDOUT_FILENO);
++  close(my);
+   while ((size = mp3_read (id, buffer, BUFSIZE)) > 0)
+     write (1, buffer, size * sizeof (mp3_sample));
+   if (mp3_close (id) < 0)
