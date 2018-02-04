@@ -1,7 +1,4 @@
-all:
-	clang -g -w -c -o perform.o perform.c
-	clang -g -w -c -o mp32pcm.o mp32pcm.c
-	clang -g -w -o /usr/local/bin/mp32pcm example.c perform.o mp32pcm.o -lm
+all: mp32pcm
 	gtts-cli "hello world" -l en -o o.mp3
 	mp32pcm <o.mp3 >o.pcm
 	ctangle stereo
@@ -30,3 +27,8 @@ all:
 	sox -r 48000 -e signed -b 16 -c 1 Front_Right.raw Front_Right.wav
 	echo the following two must be equal:
 	md5sum Front_Right.wav /usr/share/sounds/alsa/Front_Right.wav
+
+mp32pcm:
+	clang -g -w -c -o perform.o perform.c
+	clang -g -w -c -o mp32pcm.o mp32pcm.c
+	clang -g -w -o /usr/local/bin/mp32pcm example.c perform.o mp32pcm.o -lm
