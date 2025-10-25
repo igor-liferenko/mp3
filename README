@@ -1,3 +1,9 @@
+texbook.tex and mfbook.tex are before 2021 tuneup
+
+texbook.pdf and mfbook.pdf are after 2021 tuneup
+
+=============================================================
+
 How to compile texbook:
 cp /usr/share/texlive/texmf-dist/tex/plain/knuth-lib/manmac.tex .
 -\loop\iftrue
