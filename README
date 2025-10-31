@@ -5,7 +5,6 @@ texbook.pdf and mfbook.pdf are after 2021 tuneup
 =============================================================
 
 How to compile texbook:
-cp /usr/share/texlive/texmf-dist/tex/plain/knuth-lib/manmac.tex .
 -\loop\iftrue
 +\loop\iffalse
    \errmessage{This manual is copyrighted and should not be TeXed}\repeat
@@ -15,8 +14,7 @@ cp /usr/share/texlive/texmf-dist/tex/plain/knuth-lib/manmac.tex .
 ...
 -\font\pearsonkluj=arial at 9pt
 -\leftline{\pearsonkluj ScoutAutomatedPrintCode}
-sed -i s/exercuted/executed/ texbook.tex
-Download latest texbook.tex from ctan (don't use ~/prt/texbook.tex - it is before 2021 tuneup).
-/bin/tex texbook
+sed -i s/exercuted/executed/ texbook.tex # scheduled for 2029 tuneup
+tex texbook
 dvipdfmx -q -p 14.45cm,20cm -x 1.1cm -y 0pt texbook
 (mfbook is the same)
