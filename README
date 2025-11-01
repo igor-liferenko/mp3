@@ -1,3 +1,40 @@
+For TeXbook p.23, run:
+  dvi- texput
+
+For TeXbook p.26, run:
+  dvi- story
+
+For TeXbook p.27, run:
+  dvi+ story
+
+For TeXbook p.30, run:
+  dvi+ story
+
+For TeXbook p.34, run:
+  dvi+ story
+
+For METAFONTbook p.32, run:
+  ~/mytex/gftodvi mfput.2602gf
+  dvi- mfput
+
+For METAFONTbook p.37 and p.38, run:
+  ~/mytex/gftodvi io.2602gf
+  mode=localfont ~/mytex/dvips io.dvi
+  ~/mytex/open io.ps
+
+For METAFONTbook p.39, run:
+  cp io.tfm <TEX from Makefile>/TeXfonts/
+  ~/gftopk/gftopk io.nnngf <PKFONTS from dvips>/localfont/io.nnnpk /dev/stdout
+  (running 'make' will delete tfm and pk files, created by commands in 2 previous lines)
+
+For METAFONTbook p.40, run:
+  dvi- testfont
+
+For METAFONTbook p.245, run:
+  /bin/mf 13-24
+
+============================================================
+
 texbook.tex and mfbook.tex are before 2021 tuneup
 
 texbook.pdf and mfbook.pdf are after 2021 tuneup
