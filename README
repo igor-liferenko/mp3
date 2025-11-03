@@ -30,8 +30,8 @@ For METAFONTbook p.39, run:
 For METAFONTbook p.40, run:
   dvi- testfont
 
-For METAFONTbook p.245, run:
-  /bin/mf 13-24
+For METAFONTbook p.245, exercise 13.24:
+  my implementation of online display cannot be used
 
 ============================================================
 
