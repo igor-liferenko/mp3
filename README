@@ -55,3 +55,7 @@ sed -i s/exercuted/executed/ texbook.tex # scheduled for 2029 tuneup
 tex texbook
 dvipdfmx -q -p 14.45cm,20cm -x 1.1cm -y 0pt texbook
 (mfbook is the same)
+
+==============================================================
+
+http://www.zigzaganimal.be/elements/lessons-learned-from-metafont.pdf
