@@ -1,0 +1,35 @@
+\newdimen\myI \myI=1in \advance\myI by-\bigskipamount
+\newdimen\myII \myII=2in \advance\myII by-\bigskipamount
+\newdimen\myIII \myIII=3in \advance\myIII by-\bigskipamount
+\pageno=25
+\input plipsum
+{\nopar\lipsum[l]{1-2}}
+\topinsert
+\hrule height \myI width 300pt
+\endinsert
+
+\topinsert 
+\hrule height \myII width 300pt
+\endinsert
+
+\topinsert 
+\hrule height \myIII width 300pt
+\endinsert
+
+\pageinsert
+\hrule height \vsize width 300pt
+\endinsert
+
+\midinsert 
+\hrule height \myIII width 100pt
+\endinsert
+
+\topinsert 
+\hrule height \myII width 300pt
+\endinsert
+
+\topinsert 
+\hrule height \myI width 300pt
+\endinsert
+{\nopar\lipsum[l]{3-4}}
+\end
