@@ -1,0 +1,11 @@
+bot z1=(s,0);
+z5=z1+(a,0);
+z3=(1/2[x1,x5],b);
+alpha=0.5;
+z2=alpha[z1,z3]; z4=alpha[z5,z3];
+a=100;
+b=200;
+s=10;
+draw z1 .. z3; draw z3 .. z5; draw z2 .. z4;
+showit;
+end.

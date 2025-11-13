@@ -1,0 +1,13 @@
+beginchar("a",5pt#,5pt#,0);
+pickup pencircle scaled (.4pt+blacker);
+draw quartercircle scaled 10pt; endchar;
+
+beginchar("b",5pt#,5pt#,0);
+%pickup pencircle scaled (.4pt+blacker);
+%draw quartercircle scaled 10pt; endchar;
+fill((0,0)--quartercircle--cycle) scaled 10pt; endchar;
+
+draw fullcircle xscaled 10pt yscaled 5pt shifted (200,90);
+showit;
+
+end

@@ -1,0 +1,6 @@
+def openit = openwindow 0 from (0,0) to (1080-2,1920) at (-1920/2,1080/2) enddef;
+draw (-2000,0)..(2000,0);
+draw (0,-2000)..(0,2000);
+draw fullcircle scaled 10pt;
+showit;
+end

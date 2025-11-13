@@ -1,0 +1,7 @@
+h=200; w=100; o=10;
+top lft z1=(0,h); top rt z2=(w,h);
+top z3=(.5w,h); bot z4=(.5w,-o);
+pickup pencircle scaled 2/3pt yscaled 9/10;
+draw z1..z2; draw z3..z4;
+showit;
+end.

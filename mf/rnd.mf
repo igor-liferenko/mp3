@@ -1,0 +1,6 @@
+beginchar (incr code, 10pt#, 10pt#, 0);
+pickup pencircle scaled .3pt; draw unitsquare scaled w;
+pickup pencircle scaled 1pt;
+for k = 1 upto 100:
+ drawdot(uniformdeviate w, uniformdeviate w); endfor endchar
+end

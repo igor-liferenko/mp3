@@ -1,0 +1,17 @@
+"Left parenthesis";
+numeric ht#, dp#;
+ht#=body_height#; .5[ht#, -dp#]=axis#;
+beginchar("(", 7u#, ht#, dp#);
+italcorr ht#*slant-.5u#;
+pickup fine.nib;
+penpos1(hair-fine,0);
+penpos2(.75[thin,thick]-fine,0);
+penpos3(hair-fine,0);
+rt x1r=rt x3r=w-u; lft x2l=x1-4u;
+top y1=h; y2=.5[y1,y3]=axis;
+filldraw z1l{(z2l-z1l)xscaled3}...z2l
+  ...{(z3l-z2l)xscaled3}z3l
+  --z3r{(z2r-z3r)xscaled3}...z2r
+  ...{(z1r-z2r)xscaled3}z1r--cycle;
+penlabels(1,2,3); endchar;
+end

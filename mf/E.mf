@@ -1,0 +1,27 @@
+% 10-point METAFONT logo
+font_size 10pt#; % the "design size" of this font
+ht#:=6pt#; % height of characters
+xgap#:=0.6pt#; % horizontal adjustment
+u#:=4/9pt#; % unit width
+s#:=0; % extra space at the left and the right
+o#:=1/9pt#; % overshoot
+px#:=2/3pt#; % horizontal thickness of pen
+mode_setup;
+ygap#:=(ht#/13.5u#)*xgap#; % vertical adjustment
+leftstemloc#:=2.5u#+s#; % position of left stems
+barheight#:=.45ht#; % height of bar lines
+define_pixels(s,u,xgap,ygap,leftstemloc,barheight);
+py#:=.9px#; define_blacker_pixels(px,py); % pen dimensions
+pickup pencircle xscaled px yscaled py; logo_pen:=savepen;
+define_corrected_pixels(o);
+beginchar("E",14u#+2s#,ht#,0);
+pickup logo_pen;
+x1=x2=x3=leftstemloc;
+x4=x6=w-x1+o; x5=x4-xgap;
+y1=y6; y2=y5; y3=y4;
+bot y1=0; top y3=h;
+y2=barheight;
+draw z6--z1--z3--z4; draw z2--z5;
+labels(1,2,3,4,5,6);
+endchar;
+end

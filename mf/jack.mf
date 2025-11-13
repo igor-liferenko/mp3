@@ -1,0 +1,9 @@
+z1=(0,b); z2=(a,b); z3=(2a,b);
+z4=(0,0); z5=(a,0); z6=(2a,0);
+a=100;
+b=100;
+draw z1 .. z6;
+draw z2 .. z5;
+draw z3 .. z4;
+showit;
+end.
