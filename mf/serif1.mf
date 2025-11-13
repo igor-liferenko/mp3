@@ -1,0 +1,89 @@
+% MFbook p.162
+def serif(suffix $)(expr breadth,theta,left_jut,right_jut) =
+  penpos$(breadth / abs sind theta, 0);
+  z$a - z$l = z$f - z$r = (bracket / abs sind theta) * dir theta;
+  y$c = y$d; y$b = y$e = y$; y$b - y$c = if theta < 0: - fi slab;
+  x$b = x$c = x$l - left_jut; x$d = x$e = x$r + right_jut;
+  labels($a,$b,$c,$d,$e,$f) enddef;
+def serif_edge suffix $ =
+  (serif_bracket($a,$l,$b) -- z$c
+  -- z$d -- reverse serif_bracket($f,$r,$e)) enddef;
+def serif_bracket(suffix i, j, k) =
+  (z.i{z.j - z.i} ... serif_darkness [z.j, .5[z.i, z.k]]{z.k - z.i}
+  ... z.k{z.k - z.j}) enddef;
+
+thin = .5pt;
+thick = 1.1pt;
+u = .6pt;
+ht = 7pt;
+slab = .25pt;
+jut = .9pt;
+bracket = pt;
+serif_darkness = 1/3;
+
+u# = .6pt#;
+ht# = 7pt#;
+
+beginchar("A",13u#,ht#,0);
+z1 = (.5w,1.05h);
+x4l = w - x5r = u; y4l = y5r = slab;
+numeric theta[];
+theta4 = angle(z1 - z4l);
+theta5 = angle(z1 - z5r);
+serif(4,thin,theta4,.6jut,jut);
+serif(5,thick,theta5,jut,.6jut);
+z0 = z4r + whatever * dir theta4 = z5l + whatever * dir theta5;
+fill z1 -- serif_edge4 -- z0 & z0 -- serif_edge5 -- z1 & cycle;
+penpos2(whatever,theta4);
+penpos3(whatever,theta5);
+y2r = y3r = .5[y4,y0];
+y2l = y3l = y2r - thin;
+z2 = whatever[z1,z4r];
+z3 = whatever[z1,z5l];
+penstroke z2e -- z3e;
+penlabels(0,1,2,3,4,5);
+endchar;
+
+beginchar ("I", 6u#, ht#, 0);
+x1 = x2 = .5w;
+%y1 = h - y2; y2 = slab;
+y1c = h; y2c = 0;
+serif(1, thick, -90, 1.1jut, 1.1jut);
+serif(2, thick, 90, 1.1jut, 1.1jut);
+fill serif_edge2 -- reverse serif_edge1 -- cycle;
+penlabels(1, 2); endchar;
+
+beginchar ("H", 13u#, ht #, 0);
+x1 = x2 = x5 = 3u;
+x3 = x4 = x6 = w - x1 ;
+y1c = y3c = h; y2c = y4c = 0;
+serif (1, thick , -90, jut , jut );
+serif (2, thick , 90, jut , jut );
+serif (3, thick , -90, jut , jut );
+serif (4, thick , 90, jut , jut );
+fill serif_edge 2
+-- reverse serif_edge1 -- cycle;
+fill serif_edge 4
+-- reverse serif_edge3 -- cycle;
+penpos5 (thin , 90); penpos6 (thin , 90);
+y5 = y6 = .52h; penstroke z5e -- z6e ;
+penlabels(1, 2, 3, 4, 5, 6); endchar;
+
+end
+
+beginchar ("H", 13u#, ht#, 0);
+y3=y4=.5h;
+x1=x3=x5;x2=x4=x6;
+x5l = w - x6r = u; y5c= y6c= 0;
+penpos3(thin,-90);penpos4(thin,-90);
+y1c=y2c=h;
+serif(1, thick, -90, 1.1jut, 1.1jut);
+serif(2, thick, -90, 1.1jut, 1.1jut);
+serif(5, thick, 90, 1.1jut, 1.1jut);
+serif(6, thick, 90, 1.1jut, 1.1jut);
+penstroke z3e -- z4e;
+fill serif_edge5 -- reverse serif_edge1 --cycle;
+fill serif_edge6 -- reverse serif_edge2 -- cycle;;
+penlabels(1,2,3,4,5, 6); endchar;
+
+end

@@ -1,0 +1,28 @@
+\tracingall
+\settabs\+\hskip100pt&\cr
+\showbox\tabs
+\end
+
+% This is what \settabs does:
+
+\setbox\tabsyet=\null
+\setbox\tabsdone=\null
+\setbox0=\vbox{
+  \halign{%
+    \setbox0=\hbox{#\hss}%
+    \global\setbox\tabsyet=\hbox{\unhbox\tabsyet \global\setbox1=\lastbox}%
+    \ifvoid1
+      \global\setbox1=\hbox to\wd0{}%
+    \else
+      \setbox0=\hbox to\wd{\unhbox0}%
+    \fi
+    \global\setbox\tabsdone=\hbox{\box1 \unhbox\tabsdone}%
+    \box0& % this part is repeated for each column
+    \setbox0=\hbox{#}%
+    \box0
+    \crcr % end of \halign preamble
+    \hskip100pt&
+    %here is what is between last ampersand and backslash-cr in settabs
+    \crcr}}
+\setbox\tabs=\hbox{\unhbox\tabsyet \unhbox\tabsdone}
+\end

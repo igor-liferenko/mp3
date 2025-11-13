@@ -1,0 +1,60 @@
+% MFbook p.164
+px = .8pt;
+py = .2pt;
+phi = 20;
+xx = .3pt;
+u = .6pt;
+ht = 7pt;
+jut = .9pt;
+bracket = pt;
+pair dishing;
+dishing = (.25pt, 0) rotated 20;
+
+u# = .6pt#;
+ht# = 7pt#;
+
+def broad_pen = pensquare xscaled px yscaled py rotated phi enddef;
+
+def top_serif(suffix $)(expr xx, theta, left_jut, right_jut) =
+penpos$(xx,0); z$a - z$l = z$f - z$r = (bracket / abs sind theta) * dir theta;
+y$c = y$d = y$; x$c = x$l - left_jut; x$d = x$r + right_jut;
+z$b = z$l + whatever * dir theta = z$c + whatever * dir -phi;
+z$e = z$r + whatever * dir theta = z$d + whatever * dir phi;
+labels($a, $b, $c, $d, $e, $f) enddef ;
+
+def top_serif_edge suffix $ =
+(z$a .. controls z$b .. z$c
+  -- (flex (z$c,.5[z$c, z$d] - dishing, z$d)) shifted (0, +epsilon)
+  -- z$d .. controls z$e .. z$f) enddef;
+
+def bot_serif(suffix $)(expr xx, theta, left_jut, right_jut) =
+  penpos$(xx, 0); z$a - z$l = z$f - z$r = (bracket / abs sind theta) * dir theta;
+  y$c = top y$l; y$d = y$r; x$c = x$l - left_jut; x$d = x$r + right_jut;
+  z$b = z$l + whatever * dir theta = z$c + whatever * dir phi;
+  z$e = z$r + whatever * dir theta = z$d + whatever * dir -phi;
+  labels($a, $b, $c, $d, $e, $f) enddef;
+def bot_serif_edge suffix $ =
+  (z$a .. controls z$b .. z$c
+  -- (flex (z$c, .5[z$c, z$d] + dishing, z$d)) shifted (0, -epsilon)
+  -- z$d .. controls z$e .. z$f) enddef;
+
+beginchar("A", 13u#, ht#, 0); pickup broad_pen;
+z1 = (.5w, top h); lft x4l = w - rt x5r = 1.2u; y4l = y5r = 0;
+numeric theta[];
+theta4 = angle(z1 - z4l);
+theta5 = angle(z1 - z5r);
+numeric xxx; px * sind(theta5 - phi) + xxx * sind theta5 = px * cosd phi + xx;
+bot_serif(4, 0, theta4, .8jut, .8jut); bot_serif(5, xxx, theta5, .6jut, .8jut);
+z0 = z4r + whatever * dir theta4 = z5l + whatever * dir theta5;
+filldraw z1 -- bot_serif_edge4 -- z0 & z0 -- bot_serif_edge5 -- z1 & cycle;
+top y2 = top y3 = .45bot y0; z2 = whatever[z1, z4r]; z3 = whatever[z1, z5l];
+draw z2 -- z3; penlabels(0, 1, 2, 3, 4, 5); endchar;
+
+beginchar("I", 6u#, ht#, 0); pickup broad_pen;
+x1 = x2 = .5w; y1 = h; y2 = 0;
+top_serif(1, xx, -90, 1.1jut, 1.1jut);
+bot_serif(2, xx, 90, 1.1jut, 1.1jut);
+filldraw bot_serif_edge2 -- reverse top_serif_edge1 -- cycle;
+penlabels(1, 2); endchar;
+
+end
