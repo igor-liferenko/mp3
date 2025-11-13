@@ -56,4 +56,5 @@ dvipdfmx -q -p 14.45cm,20cm -x 1.1cm -y 0pt texbook
 
 ==============================================================
 
-
+https://www.tug.org/TUGboat/tb11-2/tb28knut.pdf
+https://www.tug.org/TUGboat/tb11-4/tb30knut-exercises.pdf
