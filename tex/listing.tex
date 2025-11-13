@@ -1,0 +1,27 @@
+\def\uncatcodespecials{\def\do##1{\catcode`##1=12 }\dospecials}
+\newcount\lineno % the number of file lines listed
+\def\setupverbatim{\tt \lineno=0
+  \def\par{\leavevmode\endgraf}
+  \catcode`\`=\active
+  \obeylines
+  \uncatcodespecials
+  \obeyspaces
+  \everypar{\advance\lineno by1 \llap{\sevenrm\the\lineno\ \ }}}
+{\obeyspaces\global\let =\ } % let active space = control space
+{\catcode`\`=\active \gdef`{\relax\lq}}
+\def\listing#1{\par\begingroup\setupverbatim\input#1 \endgroup}
+\listing{\jobname.tex}
+\bye
+
+And here is an example from cwebman.tex:
+{\catcode`\^^M=13{\catcode`\ =13\gdef\verbatimdefs{\def^^M{\ \par}\let =\ }} %
+  \gdef\verbatimgobble#1^^M{}}
+\font\eighttt=cmtt8
+\begingroup \def\tt{\eighttt} \baselineskip9pt
+\def\printmacs{\begingroup
+  \def\do##1{\catcode`##1=12 } \dospecials
+  \parskip 0pt \parindent 0pt
+  \catcode`\ =13 \catcode`\^^M=13
+  \tt \verbatimdefs \input cwebmac \endgroup}
+\printmacs
+\endgroup
