@@ -41,7 +41,7 @@ texbook.pdf and mfbook.pdf are after 2021 tuneup
 
 =============================================================
 
-How to compile texbook:
+How to compile texbook (mfbook is the same):
 -\loop\iftrue
 +\loop\iffalse
    \errmessage{This manual is copyrighted and should not be TeXed}\repeat
@@ -51,11 +51,9 @@ How to compile texbook:
 ...
 -\font\pearsonkluj=arial at 9pt
 -\leftline{\pearsonkluj ScoutAutomatedPrintCode}
-sed -i s/exercuted/executed/ texbook.tex # scheduled for 2029 tuneup
 tex texbook
 dvipdfmx -q -p 14.45cm,20cm -x 1.1cm -y 0pt texbook
-(mfbook is the same)
 
 ==============================================================
 
-http://www.zigzaganimal.be/elements/lessons-learned-from-metafont.pdf
+
