@@ -1,0 +1,263 @@
+\newdimen\fullhsize
+\fullhsize=\hsize
+\divide\hsize by2
+\advance\hsize by-.2pt % for rule
+\def\fullline{\hbox to \fullhsize}
+\def\makeheadline{%
+  \vbox to0pt{%
+    \vskip-22.5pt
+    \fullline{\vbox to8.5pt{}\the\headline}%
+    \vss
+  }%
+  \nointerlineskip
+}
+\def\makefootline{%
+  \baselineskip24pt\lineskiplimit0pt
+  \fullline{\the\footline}%
+}
+\let\lr=L \newbox\leftcolumn
+\output={%
+  \if L\lr
+    \global\setbox\leftcolumn=\columnbox
+    \global\let\lr=R%
+  \else
+    \doubleformat
+    \global\let\lr=L%
+  \fi
+  \ifnum\outputpenalty>-20000 \else\dosupereject\fi
+}
+\def\doubleformat{%
+  \shipout\vbox{%
+    \makeheadline
+    \fullline{\box\leftcolumn\hfil\vrule\hfil\columnbox}
+    \makefootline
+  }%
+  \advancepageno
+}
+\def\columnbox{\leftline{\pagebody}}
+
+{\obeylines
+abductor digiti minimi (foot) 
+abductor digiti minimi (hand) 
+abductor hallucis 
+abductor pollicis brevis 
+abductor pollicis longus 
+adductor brevis 
+adductor hallucis 
+adductor longus 
+adductor magnus 
+adductor pollicis 
+anconeus 
+articularis cubiti 
+articularis genu 
+aryepiglotticus 
+aryjordanicus 
+auricularis 
+biceps brachii 
+biceps femoris 
+brachialis 
+brachioradialis 
+buccinator 
+bulbospongiosus 
+constrictor of pharynx -inferior 
+constrictor of pharynx -middle 
+constrictor of pharynx -superior 
+coracobrachialis 
+corrugator supercilii 
+cremaster 
+cricothyroid 
+dartos 
+deep transverse perinei 
+deltoid 
+depressor anguli oris 
+depressor labii inferioris 
+diaphragm 
+digastric 
+digastric (anterior view) 
+erector spinae - spinalis 
+erector spinae - iliocostalis 
+erector spinae - longissimus 
+extensor carpi radialis brevis 
+extensor carpi radialis longus 
+extensor carpi ulnaris 
+extensor digiti minimi (hand) 
+extensor digitorum (hand) 
+extensor digitorum brevis (foot) 
+extensor digitorum longus (foot) 
+extensor hallucis longus 
+extensor indicis 
+extensor pollicis brevis 
+extensor pollicis longus 
+external oblique abdominis 
+flexor carpi radialis 
+flexor carpi ulnaris 
+flexor digiti minimi brevis (foot) 
+flexor digiti minimi brevis (hand) 
+flexor digitorum brevis 
+flexor digitorum longus (foot) 
+flexor digitorum profundus 
+flexor digitorum superficialis 
+flexor hallucis brevis 
+flexor hallucis longus 
+flexor pollicis brevis 
+flexor pollicis longus 
+frontalis 
+gastrocnemius 
+gemellus inferior 
+gemellus superior 
+genioglossus 
+geniohyoid 
+gluteus maximus 
+gluteus medius 
+gluteus minimus 
+gracilis 
+hyoglossus 
+iliacus 
+inferior oblique 
+inferior rectus 
+infraspinatus 
+intercostals external 
+intercostals innermost 
+intercostals internal 
+internal oblique abdominis 
+interossei - dorsal of hand 
+interossei -dorsal of foot 
+interossei- palmar of hand 
+interossei - plantar of foot 
+interspinales 
+intertransversarii 
+intrinsic muscles of tongue 
+ishiocavernosus 
+lateral cricoarytenoid 
+lateral pterygoid 
+lateral rectus 
+latissimus dorsi 
+levator anguli oris 
+levator ani-coccygeus 
+levator ani - iliococcygeus 
+levator ani-pubococcygeus 
+levator ani-puborectalis 
+levator ani-pubovaginalis 
+levator labii superioris 
+levator labii superioris 
+alaeque nasi 
+levator palpebrae superioris 
+levator scapulae 
+levator veli palatini 
+levatores costarum 
+longus capitis 
+longus colli 
+lumbricals of foot (4) 
+lumbricals of hand 
+masseter 
+medial pterygoid 
+medial rectus 
+mentalis 
+m. uvulae 
+mylohyoid 
+nasalis 
+oblique arytenoid 
+obliquus capitis inferior 
+obliquus capitis superior 
+obturator externus 
+obturator internus (A) 
+obturator internus (B) 
+omohyoid 
+opponens digiti minimi (hand) 
+opponens pollicis 
+orbicularis oculi 
+orbicularis oris 
+palatoglossus 
+palatopharyngeus 
+palmaris brevis 
+palmaris longus 
+pectineus 
+pectoralis major 
+pectoralis minor 
+peroneus brevis 
+peroneus longus 
+peroneus tertius 
+piriformis (A) 
+piriformis (B) 
+plantaris 
+platysma 
+popliteus 
+posterior cricoarytenoid 
+procerus 
+pronator quadratus 
+pronator teres 
+psoas major 
+psoas minor 
+pyramidalis 
+quadratus femoris 
+quadratus lumborum 
+quadratus plantae 
+rectus abdominis 
+rectus capitus anterior 
+rectus capitus lateralis 
+rectus capitus posterior major 
+rectus capitus posterior minor 
+rectus femoris 
+rhomboid major 
+rhomboid minor 
+risorius 
+salpingopharyngeus 
+sartorius 
+scalenus anterior 
+scalenus medius 
+scalenus minimus 
+scalenus posterior 
+semimembranosus 
+semitendinosus 
+serratus anterior 
+serratus posterior inferior 
+serratus posterior superior 
+soleus 
+sphincter ani 
+sphincter urethrae 
+splenius capitis 
+splenius cervicis 
+stapedius 
+sternocleidomastoid 
+sternohyoid 
+sternothyroid 
+styloglossus 
+stylohyoid 
+stylohyoid (anterior view) 
+stylopharyngeus 
+subclavius 
+subcostalis 
+subscapularis 
+superficial transverse 
+perinei 
+superior oblique 
+superior rectus 
+supinator 
+supraspinatus 
+temporalis 
+temporoparietalis 
+tensor fasciae lata 
+tensor tympani 
+tensor veli palatini 
+teres major 
+teres minor 
+thyro-arytenoid \& vocalis 
+thyro-epiglotticus 
+thyrohyoid 
+tibialis anterior 
+tibialis posterior 
+transverse arytenoid 
+transversospinalis -multifidus 
+transversospinalis -rotatores 
+transversospinalis -semispinalis 
+transversus abdominis 
+transversus thoracis 
+trapezius 
+triceps 
+vastus intermedius 
+vastus lateralis 
+vastus medialis 
+zygomaticus major 
+zygomaticus minor
+}
+\bye
