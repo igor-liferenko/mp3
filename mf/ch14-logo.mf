@@ -1,4 +1,4 @@
-% Run: g=p+4.1mm+X mf+ ch14-logo
+%&p+4.1mm+X
 % Three invisible equations are:
 %   b9l = b9 + (8.7,-9.7)
 %   c9l = c9 + (-8.7,-9.7)
