@@ -1,4 +1,4 @@
-%&p+4.1mm+X
+% pdfpagewidth=210mm pdfpageheight=297mm pdfhorigin=4.1mm pdfvorigin=???
 % Three invisible equations are:
 %   b9l = b9 + (8.7,-9.7)
 %   c9l = c9 + (-8.7,-9.7)
