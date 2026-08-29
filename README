@@ -1,8 +1,18 @@
+If when you run gftodvi you get a warning like
+
+    Sorry, I can't make diagonal rules of slant    0.16667!
+
+then add this argument in the end of the command:
+
+    'slantfont slant16667'
+
+============================================================
+
 For TeXbook p.23, run:
-  dvi- texput
+  dvi+ texput
 
 For TeXbook p.26, run:
-  dvi- story
+  dvi+ story
 
 For TeXbook p.27, run:
   dvi+ story
@@ -14,18 +24,24 @@ For TeXbook p.34, run:
   dvi+ story
 
 For METAFONTbook p.32, run:
-  ~/mytex/gftodvi mfput.2602gf
+  gftodvi mfput.2602gf
   dvi- mfput
 
-For METAFONTbook p.37 and p.38, run:
-  ~/mytex/gftodvi io.2602gf
-  mode=localfont ~/mytex/dvips io.dvi
-  ~/mytex/open io.ps
+For METAFONTbook p.37, run:
+  gftodvi io.2602gf
+  dvi+ io
+
+For METAFONTbook p.38, run:
+  gftodvi io.2602gf
+  dvi- io
 
 For METAFONTbook p.39, run:
-  cp io.tfm <TEX from Makefile>/TeXfonts/
-  ~/gftopk/gftopk io.nnngf <PKFONTS from dvips>/localfont/io.nnnpk /dev/stdout
-  (running 'make' will delete tfm and pk files, created by commands in 2 previous lines)
+  cp io.tfm ~/tex/TeXfonts/
+  mkdir -p ~/.PKfonts/localfont/
+  ~/gftopk/gftopk io.2400gf ~/.PKfonts/localfont/io.2400pk /dev/stdout
+When you are done with Experiment 4, run:
+  rm ~/tex/TeXfonts/io.tfm
+  rm ~/.PKfonts/localfont/io.2400pk
 
 For METAFONTbook p.40, run:
   dvi- testfont
