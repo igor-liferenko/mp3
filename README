@@ -35,13 +35,9 @@ For METAFONTbook p.38, run:
   gftodvi io.2602gf
   dvi- io
 
-For METAFONTbook p.39, run:
-  cp io.tfm ~/tex/TeXfonts/
-  mkdir -p ~/.PKfonts/localfont/
-  ~/gftopk/gftopk io.2400gf ~/.PKfonts/localfont/io.2400pk /dev/stdout
-When you are done with Experiment 4, run:
-  rm ~/tex/TeXfonts/io.tfm
-  rm ~/.PKfonts/localfont/io.2400pk
+For METAFONTbook p.39, no need to ask a local system wizard for help.
+Instead, on the next page use the font directly from current directory:
+  ./io scaled 4000
 
 For METAFONTbook p.40, run:
   dvi- testfont
