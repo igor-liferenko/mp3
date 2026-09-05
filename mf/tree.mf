@@ -1,4 +1,4 @@
-def openit = openwindow currentwindow from origin to (infinity,infinity) at (-10,1055) enddef;
+def openit = openwindow currentwindow from origin to (1800,900) at (-10,1055) enddef;
 mag := 0.34;
 
 mode_setup;
