@@ -35,9 +35,15 @@ For METAFONTbook p.38, run:
   gftodvi io.2602gf
   dvi- io
 
-For METAFONTbook p.39, no need to move io.tfm and convert io.nnngf
-Instead, on p.40 use the font directly from current directory:
-  ./io scaled 4000
+For METAFONTbook p.39:
+You cannot use the font via ./ in TeX because MakePK operates in batch
+mode and in this example we use manual input.
+Therefore, run:
+  ln -s $PWD/io.tfm ~/tex/TeXfonts/
+  mkdir -p ~/.PKfonts/localfont/
+  ~/gftopk/gftopk io.2400gf ~/.PKfonts/localfont/io.2400pk /dev/stdout
+('ln -s' is used instead of 'cp' in order to be able to clean out such
+files by simply running 'make' in mytex/)
 
 For METAFONTbook p.40, run:
   dvi- testfont
