@@ -36,9 +36,9 @@ For METAFONTbook p.38, run:
   dvi- io
 
 For METAFONTbook p.39:
-There is no need to move io.tfm and convert io.nnngf
-Instead, put the code directly to io.mf and
-use font via ./
+  cp io.tfm ~/tex/TeXfonts/
+  mkdir -p ~/.PKfonts/localfont/
+  gftopk io.2400gf ~/.PKfonts/localfont/io.2400pk
 
 For METAFONTbook p.40, run:
   dvi- testfont
