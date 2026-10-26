@@ -1,0 +1,10 @@
+mode_setup;
+font_size 10pt#;
+default_pen:=savepen;
+beginchar(0,10pt#,10pt#,0);
+  pickup default_pen;
+  drawdot(.35w,.7h);
+  drawdot(.65w,.7h);
+  draw(.2w,.4h)..(.5w,.25h)..(.8w,.4h);
+endchar;
+end

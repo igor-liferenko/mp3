@@ -1,0 +1,9 @@
+% To edit a character without gftodvi and online display, use this:
+% mf '\mode=localfont; input smile'
+% tex smile
+% Edit smile.mf (loop)
+% dvi+ smile
+% Goto 'loop'
+\nopagenumbers
+\font\F=./smile scaled 24600 % if mf fails, reduce this and scale in pdf viewer instead
+\F \char0 \bye
